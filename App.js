@@ -11,33 +11,25 @@ import {
   SafeAreaView,
   Button,
 } from "react-native";
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
 
 export default function App() {
   const handlePress = () => console.log("hi there");
+  const { landscape } = useDeviceOrientation();
 
   return (
     <SafeAreaView style={styles.container}>
       <Text onPress={handlePress}>Hello!</Text>
-      <Button
-        color="orange"
-        title="Click Me"
-        onPress={() =>
-          Alert.alert("My Tile", "Message", [
-            {
-              text: "yes",
-              onPress: () => console.log("Yes"),
-            },
-            { text: "no", onPress: () => console.log("No") },
-          ])
-        }
-      />
-      <Button
-        color="orange"
-        title="Click Me"
-        onPress={() =>
-          Alert.prompt("title", "msg", (text) => console.log(text))
-        }
-      />
+      <View
+        style={{
+          backgroundColor: "blue",
+          width: "100%",
+          height: landscape ? "100%" : "30%",
+        }}
+      ></View>
 
       <StatusBar style="auto" />
     </SafeAreaView>

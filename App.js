@@ -21,18 +21,31 @@ export default function App() {
   const { landscape } = useDeviceOrientation();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text onPress={handlePress}>Hello!</Text>
+    <View
+      style={{
+        backgroundColor: "#fff",
+        flex: 1,
+      }}
+    >
       <View
         style={{
-          backgroundColor: "blue",
-          width: "100%",
-          height: landscape ? "100%" : "30%",
+          backgroundColor: "dodgerblue",
+          flex: 1,
         }}
-      ></View>
-
-      <StatusBar style="auto" />
-    </SafeAreaView>
+      />
+      <View
+        style={{
+          backgroundColor: "gold",
+          flex: 1,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "tomato",
+          flex: 1,
+        }}
+      />
+    </View>
   );
 }
 

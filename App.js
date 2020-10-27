@@ -8,6 +8,7 @@ import {
   Image,
   View,
   SafeAreaView,
+  Button,
 } from "react-native";
 
 export default function App() {
@@ -16,26 +17,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text onPress={handlePress}>Hello!</Text>
-      <TouchableOpacity onPress={() => console.log("hi here")}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: "http://picsum.photos/200/300",
-          }}
-        />
-      </TouchableOpacity>
-      <TouchableWithoutFeedback onPress={() => console.log("hi here")}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: "http://picsum.photos/200/300",
-          }}
-        />
-      </TouchableWithoutFeedback>
+      <Button
+        color="orange"
+        title="Click Me"
+        onPress={() => console.log("Tapped")}
+      />
 
       <StatusBar style="auto" />
     </SafeAreaView>
